@@ -5,6 +5,7 @@
 - [RestUI][Module_RestUI]
 - [Devel][Module_Devel]
 - [Admin Toolbar][Module_Admin_toolbar]
+- [Image raw output][Module_Image_raw_output] <http://enzolutions.com/articles/2014/12/09/how-to-create-a-field-formatter-in-drupal-8/>
 
 ## Active modules
 
@@ -57,3 +58,4 @@ $ drush en field_ui, help, views_ui, admin_toolbar, admin_toolbar_tools, devel, 
 [Module_RestUI]: <https://www.drupal.org/project/restui>
 [Module_Devel]: <https://www.drupal.org/project/devel>
 [Module_Admin_toolbar]: <https://www.drupal.org/project/admin_toolbar>
+[Module_Image_raw_formatter]: <https://www.drupal.org/project/image_raw_formatter>
