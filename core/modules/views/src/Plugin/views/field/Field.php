@@ -1031,12 +1031,24 @@ class Field extends FieldPluginBase implements CacheableDependencyInterface, Mul
     $field_item_definition = $field_item_list->getFieldDefinition();
 
     if ($field_item_definition->getFieldStorageDefinition()->getCardinality() == 1) {
-      return $field ? $field_item_list->$field : $field_item_list->value;
+      $result = $field ? $field_item_list->$field : $field_item_list->value;
+      return $result;
     }
 
     $values = [];
     foreach ($field_item_list as $field_item) {
-      $values[] = $field ? $field_item->$field : $field_item->value;
+      $result = $field ? $field_item->$field : $field_item->value;
+      // If $result is NULL we are returning all the fields of an item.
+      $result = isset($result) ? $result : $field_item;
+      // We need to alter the data result for some types. Shitty solution.
+      if ($field_item_definition->getType() == 'entity_reference') {
+        $result = $result->target_id;
+      }
+      if ($field_item_definition->getType() == 'image') {
+        // For now we let the images return unecessary attributes.
+      }
+
+      $values[] = $result;
     }
     return $values;
   }
