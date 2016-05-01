@@ -1047,6 +1047,8 @@ class Field extends FieldPluginBase implements CacheableDependencyInterface, Mul
       if ($field_item_definition->getType() == 'image') {
         // For now we let the images return unecessary attributes.
       }
+      
+      //COROBORATORU!
 
       $values[] = $result;
     }
