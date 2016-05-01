@@ -1048,8 +1048,6 @@ class Field extends FieldPluginBase implements CacheableDependencyInterface, Mul
         // For now we let the images return unecessary attributes.
       }
       
-      //COROBORATORU!
-
       $values[] = $result;
     }
     return $values;
